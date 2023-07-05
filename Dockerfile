@@ -1,8 +1,8 @@
 FROM  centos:latest
 MAINTAINER amey@gmail.com
+WORKDIR /var/www/html/
 RUN yum install httpd -y 
 ADD 2.tar.gz /var/www/html/
-WORKDIR /var/www/html/
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
