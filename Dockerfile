@@ -1,12 +1,16 @@
-FROM  centos:latest
-MAINTAINER amey@gmail.com
-WORKDIR /var/www/html/
-RUN yum install httpd -y 
+FROM  rockylinux:8
+MAINTAINER vikashashoke@gmail.com
+RUN yum install httpd -y
 ADD 2.tar.gz /var/www/html/
-RUN cp -rvf photogenic/* .
+WORKDIR /var/www/html/
+RUN cd /var/www/html/
+RUN yum install unzip -y
+RUN unzip photogenic.zip
+RUN cp -r /var/www/html/photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
+
  
  
 # FROM  centos:latest
