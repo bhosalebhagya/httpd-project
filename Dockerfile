@@ -1,9 +1,6 @@
 FROM  centos:latest
 MAINTAINER amey@gmail.com
 RUN yum install httpd -y 
-Run wget https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip
-Run tar -cvf 2.tar photogenic.zip
-Run gzip 2.tar
 ADD 2.tar /var/www/html/
 WORKDIR /var/www/html/
 RUN cp -rvf photogenic/* .
