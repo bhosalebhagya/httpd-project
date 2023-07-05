@@ -1,9 +1,11 @@
 FROM  centos:latest
 MAINTAINER amey@gmail.com
 RUN yum install httpd -y 
-ADD photogenic.zip /var/www/html/
+Run wget https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip
+Run tar -cvf 2.tar photogenic.zip
+Run gzip 2.tar
+ADD 2.tar /var/www/html/
 WORKDIR /var/www/html/
-RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
