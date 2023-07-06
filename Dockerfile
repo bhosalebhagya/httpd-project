@@ -6,7 +6,7 @@ WORKDIR /var/www/html/
 RUN cd /var/www/html/
 RUN yum install unzip -y
 RUN unzip photogenic.zip
-RUN rm -rf photogenic photogenic.zip
+RUN rm -rf photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
 
