@@ -1,5 +1,5 @@
 FROM  rockylinux:8
-MAINTAINER vikashashoke@gmail.com
+MAINTAINER amey@gmail.com
 RUN yum install httpd -y
 ADD 2.tar.gz /var/www/html/
 WORKDIR /var/www/html/
