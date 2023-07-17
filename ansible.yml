@@ -7,5 +7,5 @@
    - name: remove docker image
      shell: docker image rmi ameypadwad/mynewimage
    - name: create new container
-     shell: docker container run -itd --name rockstar-container -p 9000:80 ameypadwad/mynewimage
+     shell: docker container run -itd --name rockstar-container -p 9000:80 bhagyaveer/mynewimage
 
